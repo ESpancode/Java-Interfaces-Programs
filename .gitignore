@@ -1,12 +1,61 @@
-*.class
+package crew;
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+/* The captain comes first in the star trek crew*/
+/*I was able to look at Tutorial Points for any references*/
+/*http://www.tutorialspoint.com/java/java_interfaces.htm*/
 
-# Package Files #
-*.jar
-*.war
-*.ear
+public interface captkirk {
+	
+	public void salute();		/*All captains must salute*/
+	
+	public void command();      /*All captains must command ship and crew*/
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+
+/*Now to implement the interface via actions shown above*/
+
+public class starfleet implements captkirk{
+
+	   public void salute(){
+	      System.out.println("Captain Kirk Salutes Crew of Enteprise");
+	   }
+
+	   public void command(){
+	      System.out.println("Captain Kirk Commands Star Ship Crew");
+	   } 
+
+	   public static void main(String args[]){
+	      starfleet s = new starfleet();
+	      s.salute();
+	      s.command();
+	   }
+}
+}
+
+package crew;
+
+/* Commander Spock is next in the star trek crew*/
+/*I was able to look at Tutorial Points for any references*/
+/*http://www.tutorialspoint.com/java/java_interfaces.htm*/
+public interface spock {
+	
+	/*Example of extending the interface*/
+		public void human(String name);
+		   public void vulcan(String name);
+		}
+		
+		public interface spock extends human
+		{
+		   public void humanage(int age);		/*Spocks human age - integer*/
+		   public void earthvisits(int visits);	/*Spocks earth visits - integer*/
+		   public void yos(int years);			/*Spocks years of service - integer*/
+		}
+		
+		public interface spock extends vulcan
+		{
+		   public void vulcanranks();
+		   public void vulcanfather();
+		   public void vulcanvisits(int visits); /*Spocks vulcan visits - integer*/
+		   public void vulcanage(int age);		/*Spocks vulcan age - integer*/
+		 }
+}
+}
